@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 img {
     max-width: 100%;
     max-height: 100%;
@@ -21,4 +23,10 @@ a.nav-link dropdown-toggle {
     display: block
 }
 
-p {font-size: xx-large;}
+h3 {
+    font-family: 'DM Sans', sans-serif;
+}
+h5 {font-family: 'DM Sans', sans-serif;
+}
+
+p {font-size: xx-large; font-family: 'DM Sans', sans-serif;}

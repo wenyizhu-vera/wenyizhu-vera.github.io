@@ -1,3 +1,3 @@
-function howdy(yourFirstName) {
-    alert("Howday" + yourFirstName);
+function howdy(FirstName) {
+    alert("Howdy " + FirstName);
 }
