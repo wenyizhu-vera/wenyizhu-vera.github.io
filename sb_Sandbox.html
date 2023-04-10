@@ -24,17 +24,17 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="#" id="navbarDropdown"
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown"
                         role="button" aria-haspopup="true" aria-expanded="false">About me</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item nav-link active" aria-current="page" href="sb_Basic Info.html">Basic Info</a></li>
+                        <li><a class="dropdown-item" href="sb_Basic Info.html">Basic Info</a></li>
                         <li><a class="dropdown-item" href="#">Past Experience</a></li>
                     </ul>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sb_Sandbox.html">Sandbox</a>
+                    <a class="nav-link active" aria-current="page" href="sb_Sandbox.html">Sandbox</a>
                 </li>
                 <li class="nav-item">
                     <a id="resume" class="nav-link" href="wenyiresume.html" target="_blank">📁</a>
@@ -43,11 +43,21 @@
         </div>
 </nav>
 
-    <h3 class="display-3">Basic Info</h3>
-    <p class="p1 d-none d-md-block">ffhvgjhgjgyftdrstgjhhjnknjkbghcrxdffhvgjhgjgyftdrstgjhhjnknjkbghcrxdffhvgjhgjgyftdrstgjhhjnknjkbghcrxd.</p>
-    <div class="container-fluid"></div>
-        <img src="images/img2.png">
+    <h3 class="display-3" id = "sandbox">Sandbox</h3>
+    <div class="container-fluid">
+        <img id="my-element" src="images/img1.png" class="img-fluid">
+        </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <div id="greetingMessage" class="container-fluid display-5 text-center" id="greetingMessage">
+            click on buttons and see what happends!
+        </div>
+        <button type="botton" class="btn btn-primary btn-lg" onclick="greetUser()">Click to enter your name</button>
+        <button type="botton" class="btn btn-primary btn-lg" onclick="evalNumber()">Evaluate Number</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="changeTitle()">Change Title</button>
+        <button type="button" class="btn btn-warning btn-lg" onclick="hideElement()">Hide element</button>
+        <button type="button" class="btn btn-warning btn-lg" onclick="displaytMinute()">Current minute</button>
     </div>
+    <div class="display-1 text-center" id="time"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>

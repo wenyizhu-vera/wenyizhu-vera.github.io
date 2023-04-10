@@ -7,21 +7,8 @@ img {
     height: auto;
 }
 
-.nav {height: 40px; background: black; }
+nav.navbar {padding: 1px;}
 
-a.nav-link:hover {
-    background: white
-}
-
-a.nav-link {
-    color: aliceblue;
-    display: block;
-}
-
-a.nav-link dropdown-toggle {
-    color: aliceblue; 
-    display: block
-}
 
 h3 {
     font-family: 'DM Sans', sans-serif;
@@ -30,3 +17,5 @@ h5 {font-family: 'DM Sans', sans-serif;
 }
 
 p {font-size: xx-large; font-family: 'DM Sans', sans-serif;}
+
+#resume {font-size:larger;}
