@@ -46,15 +46,14 @@ function displaytMinute() {
 
 // ===========This is week 4 map API exercise!!===========
 function mapLoad() {
-    //Define the lat lon coordinate
+    //Define the coordinate
     var latLng = [41.789649, -87.599702];
 
-    // set attribution and access key URl
-    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-    
-        // L(leaflet method) Define two tile layer variables
+    //set attribution and access key URL
+    var mbAttr = 'Map data &copy; <a href=" ">OpenStreetMap</a > contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a >',
+        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmVsaXh3aW4iLCJhIjoiY2xnOTMwMDU4MTM1dzNncXJwNGtua29iNSJ9.273VFcJdLUfewc1gBWvhRQ';
+
+    //Define two tile layer variables
     var grayscale = L.tileLayer(mbUrl, {
         id: 'mapbox/light-v9',
         tileSize: 512,
@@ -67,22 +66,24 @@ function mapLoad() {
             zoomOffset: -1,
             attribution: mbAttr
         });
-       
-        // Define map object
+
+    //Define map object
     var map = L.map('map', {
         center: latLng,
-        zoom: 16, 
-        // 16 is nice neighborhood level zoom
+        zoom: 16,
         layers: [streets]
     });
-    // Add title layers to base layer object
+
+    //Add tile layers to base layer project
+    //Add to the map
+    //Add a marker with pop-up
+
     var baseLayers = {
         "Grayscale": grayscale,
         "Streets": streets
     };
-    // Add to the map
+
     L.control.layers(baseLayers).addTo(map);
-    // Add a marker with pop-up
     L.marker(latLng).addTo(map)
         .bindPopup("<b>UChicago<br>Campus</b>").openPopup();
 
@@ -95,16 +96,12 @@ function mapLoad() {
             .openOn(map);
     }
     map.on('click', onMapClick);
-
 }
-
 // click on button to activate page
 function openMapWindow() {
     // Open a new window using the window.open() method
     var mapWindow = window.open("sb_mapapi.html");
 }
-
-
 // ===========This is week 4 appendHTML exercise!!===========
 function addElements() {
     var valueArray = ['Pink Floyd', 'Joy Division', 'The Kinks'];
@@ -137,4 +134,48 @@ function addElements() {
 function openbandWindow() {
     // Open a new window using the window.open() method
     var bandWindow = window.open("sb_bandimg.html");
+}
+
+// ===========This is week 4 wiki API exercise!!===========
+function wikiAPI() {
+    // Define your varables
+    // create an XHR object
+    // Define base URL API and insert searchTerm variable
+
+    var searchTerm = document.getElementById('searchTerm').value;
+    var connect = new XMLHttpRequest();
+    var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm
+
+    // Open the API call
+    // Use XHR.open to get a file from the API.
+    connect.open('GET', url);
+
+    // Define actions that will happen when the response is returned, parse and display the data
+    // Load and parse the response as a JSON data obejct
+    // Console.log the data object to see what you got as a response
+    // locate the branch of the project that is of interest
+    // Loop thru the branch and output the wiki pages to the HTML page
+
+    connect.onload = function () {
+        var wikiObject = JSON.parse(this.response);
+        console.log(wikiObject);
+        console.log(wikiObject.query.pages);
+        var pages = wikiObject.query.pages;
+        for (var i in pages) {
+            var newDiv = document.createElement("div");
+            newDiv.setAttribute('class', 'row h4');
+            document.getElementById("wiki").appendChild(newDiv);
+            newDiv.innerText = pages[i].title;
+        };
+    }
+
+    // Send the API request to the server
+    connect.send();
+
+}
+
+// click on button to activate page
+function openWikiWindow() {
+    // Open a new window using the window.open() method
+    var WikiWindow = window.open("sb_wikiapi.html");
 }
