@@ -1,0 +1,17 @@
+{
+    "petList" :
+    [
+        {
+        "nickname": "Fluffy",
+        "fullName": "Fluffington J. Purrs-a-lot",
+        "species": "cat",
+        "color": "tiger"
+        },
+        {
+        "nickname": "Spot",
+        "fullName": "abc",
+        "species": "dog",
+        "color": "black"
+        }
+    ]
+}
