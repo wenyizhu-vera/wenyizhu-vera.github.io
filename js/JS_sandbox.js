@@ -138,19 +138,19 @@ function openbandWindow() {
 
 // ===========This is week 4 wiki API exercise!!===========
 function wikiAPI() {
-    // Define your varables
+// Define your varables
     // create an XHR object
     // Define base URL API and insert searchTerm variable
 
     var searchTerm = document.getElementById('searchTerm').value;
     var connect = new XMLHttpRequest();
-    var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm
+    var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
 
-    // Open the API call
+// Open the API call
     // Use XHR.open to get a file from the API.
     connect.open('GET', url);
 
-    // Define actions that will happen when the response is returned, parse and display the data
+// Define actions that will happen when the response is returned, parse and display the data
     // Load and parse the response as a JSON data obejct
     // Console.log the data object to see what you got as a response
     // locate the branch of the project that is of interest
@@ -158,8 +158,8 @@ function wikiAPI() {
 
     connect.onload = function () {
         var wikiObject = JSON.parse(this.response);
-        console.log(wikiObject);
-        console.log(wikiObject.query.pages);
+        // console.log(wikiObject);
+        // console.log(wikiObject.query.pages);
         var pages = wikiObject.query.pages;
         for (var i in pages) {
             var newDiv = document.createElement("div");
@@ -169,7 +169,7 @@ function wikiAPI() {
         };
     }
 
-    // Send the API request to the server
+// Send the API request to the server
     connect.send();
 
 }
@@ -179,3 +179,8 @@ function openWikiWindow() {
     // Open a new window using the window.open() method
     var WikiWindow = window.open("sb_wikiapi.html");
 }
+
+// Super Challenge
+    // Display links to the Wikipedia HTML pages as results.
+    // Use the pageid property in the JSON file.
+    // The base URL for loading Wikipedia pages by pageid is the following: https://en.wikipedia.org/?curid=PAGEID_GOES_HERE
