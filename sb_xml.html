@@ -4,85 +4,84 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wenyi's portfolio</title>
-<!-- Add Bootstrap’s CSS -->
+    <title>Map API Example</title>
+    <!-- Add Bootstrap’s CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-<!-- My css file-->
+    <!-- My css file-->
     <link rel="stylesheet" href="css/main_styles.css">
-<!-- My sandbox JS -->
-    <script src="/js/JS_sandbox.js"></script>
+    <!-- week 5 XML exercise -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- My sandbox JS -->
+    <script src="/js/JS_xml.js"></script>
 </head>
 
-<body>
-<!-- My navbar -->
-<nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
-    <div class="container-fluid">
-    <!-- My navbar-toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-            <!-- list "Home" -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-            <!-- dropdown list "About Me" -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown"
-                        role="button" aria-haspopup="true" aria-expanded="false">About me</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="sp_basicinfo.html">Basic Info</a></li>
-                        <li><a class="dropdown-item" href="#">Past Experience</a></li>
-                    </ul>
-            <!-- list "Contact Me" -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact me</a>
-                </li>
-            <!-- list "Sandbox" -->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="sp_sandbox.html">Sandbox</a>
-                </li>
-            <!-- list "Resume" -->
-                <li class="nav-item">
-                    <a id="resume" class="nav-link" href="sp_resume.html" target="_blank">📁</a>
-                </li>
-            </ul>
-        </div>
-</nav>
+<body onload="loadXML()">
+    <!-- My navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <!-- My navbar-toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <!-- list "Home" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <!-- dropdown list "About Me" -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">About me</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="sp_basicinfo.html">Basic Info</a></li>
+                            <li><a class="dropdown-item" href="#">Past Experience</a></li>
+                        </ul>
+                        <!-- list "Contact Me" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact me</a>
+                    </li>
+                    <!-- list "Sandbox" -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sp_sandbox.html">Sandbox</a>
+                    </li>
+                    <!-- list "Resume" -->
+                    <li class="nav-item">
+                        <a id="resume" class="nav-link" href="sp_resume.html" target="_blank">📁</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
 
-    <h3 class="display-3" id = "sandbox">Sandbox</h3>
-    <div class="container-fluid">
-        <img id="my-element" src="images/img1.png" class="img-fluid">
+    <!-- This is week 5 XML exercise -->
+    <div id="nav-palceholder"></div>
+    <div class="container mt-3">
+        <div id="title"></div>
+        <div id="subtitle"></div>
+
+        <div class="container">
+            <h2 id="projectTitle"></h2>
+            <h4 id="setTitle"></h4>
+            <h6 id="setDescription"></h6>
+            <table class="table table-striped order-table" id="ochreTable">
+                <thead class="thead-dark" id="ochreTableColumns">
+                    <tr>
+                        <th style="text-align: left; width: 30%">Name</th>
+                        <th style="text-align: left; width: 30%">Description</th> 
+                    </tr>
+                </thead>
+                <tbody id="ochreTableBody">
+                </tbody>
+            </table>
+        </div>
+        <a id="license"></a>
     </div>
     <br />
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <div class="container-fluid display-7 text-center" id="greetingMessage">
-            click on buttons and see what happens!
-        </div>
-    <!-- button group -->
-        <div class="row">
-            <div class="col-sm-6">
-                <button type="botton" class="btn btn-primary btn-lg" onclick="greetUser()">Enter Your Name</button>
-                <button type="botton" class="btn btn-primary btn-lg" onclick="evalNumber()">Evaluate Number</button>
-                <button type="button" class="btn btn-primary btn-lg" onclick="changeTitle()">Change Title</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="hideElement()">Hide Element</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="displaytMinute()">Current Minute</button>
-            </div>
-            <div class="col-sm-6">
-                <button type="button" class="btn btn-warning btn-lg" onclick="openMapWindow()">Load Map</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="openbandWindow()">Fav Band Images</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="openWikiWindow()">Wiki</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="sortedArray()">Sort</button>
-                <button type="button" class="btn btn-warning btn-lg" onclick="openOchreWindow()">Ochre Table</button>
-            </div>
-        </div>
-    </div>
-    <div class="display-3 text-center" id="time"></div>
     <br />
     <br />
+
 
     <!-- footer -->
     <!-- Define the SVG symbol: define an SVG symbol using the <symbol> element.  -->
@@ -175,7 +174,7 @@
         </footer>
     </div>
 
-<!-- Add Bootstrap’s JS -->
+    <!-- Add Bootstrap’s JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>

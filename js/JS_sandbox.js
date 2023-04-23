@@ -203,3 +203,9 @@ function sortedArray() {
     let sortedArray = parseArray();
     alert("Sorted array: " + sortedArray.join(", "));
 }
+
+// ===========This is week 5 XML exercise!!===========  
+function openOchreWindow() {
+    // Open a new window using the window.open() method
+    var OchreWindow = window.open("sb_xml.html");
+}
