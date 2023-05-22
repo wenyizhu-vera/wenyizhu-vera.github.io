@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wenyi's portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">About me</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="sp_basicinfo.html">Basic Info</a></li>
+                        <li><a class="dropdown-item" href="sp_past.html">Past Experience</a></li>
+                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sp_contact.html">Contact me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sp_sandbox.html">Sandbox</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+
+    <!-- FAQs -->
+<div class="faqs-container container-md">
+    <h3 class="display-3">FAQs</h3>
+    <br/>
+    <ul class="faqs">
+        <li>
+            <h4>What's the deal with your magical artwork?</h4>
+            <p>Ah, the magic! Well, my artwork is a blend of imagination, whimsy, and a dash of fairy dust. Each piece
+                is crafted with love and sprinkled with creativity to bring joy and wonder into your life.</p>
+        </li>
+        <li>
+            <h4>Can I use your artwork to summon unicorns?</h4>
+            <p>While my artwork is enchanting, unfortunately, I haven't quite mastered the art of summoning unicorns
+                just yet. However, it can certainly transport you to a realm of imagination and make your walls look
+                downright magical!</p>
+        </li>
+        <li>
+            <h4>How do I resist the urge to hug my new art piece?</h4>
+            <p>Ah, the struggle is real! While I can't guarantee your art piece won't give you warm and fuzzy feelings,
+                it's best to admire it from a safe distance to preserve its beauty and avoid smudges or accidental bear
+                hugs.</p>
+        </li>
+        <li>
+            <h4>Can I request a painting of my cat wearing a top hat?</h4>
+            <p>Absolutely! I'd be delighted to bring your feline friend to life, sporting a dapper top hat. Just reach
+                out to me with the purrfect details, and we'll make your artistic dreams come true.</p>
+        </li>
+        <li>
+            <h4>Do your paintings come with a secret treasure map?</h4>
+            <p>Ah, wouldn't that be a delight! While my paintings won't lead you to buried treasure, they hold the
+                treasure of imagination and inspiration. So, set sail on a journey of creativity and let your
+                imagination unfurl.</p>
+        </li>
+        <li>
+            <h4>Can I hang your artwork in my spaceship?</h4>
+            <p>Blast off to artistic adventures! Absolutely, my artwork is suitable for any atmosphere, be it your
+                earthly abode or a stellar spaceship. Just make sure it's securely fastened for those intergalactic
+                travels!</p>
+        </li>
+        <li>
+            <h4>What if my art piece starts talking to me?</h4>
+            <p>Ah, the wonders of imagination! While I can't guarantee your artwork will start chatting, if you find
+                yourself in a delightful conversation with your art piece, embrace it and let your imagination soar. Who
+                knows what enchanting tales it might share?</p>
+        </li>
+        <li>
+            <h4>What is the preferred food of our esteemed site visitors?</h4>
+            <p>Curiosity got the best of me, so I conducted an extensive poll. After much deliberation, laughter, and a few questionable dance moves, I am thrilled to present the gastronomic
+            preferences of our wonderful visitors:</p>
+        </li>
+    </ul>
+</div>
+
+<div class="chart-container">
+    <canvas id="myChart"></canvas>
+</div>
+
+
+        <!-- footer -->
+        <!-- Define the SVG symbol: define an SVG symbol using the <symbol> element.  -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <defs>
+                <style>
+                    .cls-1,
+                    .cls-2,
+                    .cls-3,
+                    .cls-6,
+                    .cls-7 {
+                        fill: none;
+                    }
+        
+                    .cls-1,
+                    .cls-2,
+                    .cls-3,
+                    .cls-4,
+                    .cls-5,
+                    .cls-6,
+                    .cls-7 {
+                        stroke: #000;
+                        stroke-miterlimit: 10;
+                    }
+        
+                    .cls-1,
+                    .cls-5 {
+                        stroke-width: 6px;
+                    }
+        
+                    .cls-2 {
+                        stroke-width: 4px;
+                    }
+        
+                    .cls-3 {
+                        stroke-width: 2px;
+                    }
+        
+                    .cls-4 {
+                        stroke-width: 5px;
+                    }
+        
+                    .cls-6 {
+                        stroke-width: 3px;
+                    }
+        
+                    .cls-7 {
+                        stroke-width: 7px;
+                    }
+                </style>
+            </defs>
+            <symbol id="图层_1" data-name="图层 1" viewBox="0 0 464 464">
+                <path class="cls-1"
+                    d="M287.32,141.94s34.21,49.4,20.44,114.15c-2.26,10.63-6.81,16.47-8.17,18.13-1.52,1.84-4.25,4.79-11.44,9.47,0,0-12.16,7.9-24,11.9-9.29,3.15-101.61,28.47-140.19-24.25C88.09,222.28,120.76,136,176.11,112.4c26.17-11.15,68-12.31,95.61,11C278.29,129,281.77,133.93,287.32,141.94Z" />
+                <polyline class="cls-1" points="109.28 204.42 80.55 227.32 109.14 238.09" />
+                <ellipse class="cls-2" cx="169.26" cy="191.15" rx="13.55" ry="14.43"
+                    transform="translate(-69.13 99.73) rotate(-27.49)" />
+                <ellipse class="cls-3" cx="111.68" cy="188.1" rx="2.87" ry="2.5" />
+                <path class="cls-4"
+                    d="M151.5,438.5c189,41,250-72,250-72s-88-78.16-119.69-75.68c-57,4.48-109.9,44.57-130.31,147.68" />
+                <path class="cls-5"
+                    d="M188.27,154.49c9.27,59.23,52.07,54.41,48.1,87.08-3.75,30.81-46.09,39.75-43.29,51.11,3.45,14,68,2,109-9.47,52.83-14.84,50.22-36.6,52.91-43.54,9.49-24.52-17.2-67.37-32.07-92.75-22.12-37.77-31.13-35.75-40.08-41.64-5.37-3.54-72.85-31.82-94.59-5.68a25,25,0,0,0-2.16,3.37C175.76,121.74,187.47,149.38,188.27,154.49Z" />
+                <path class="cls-6" d="M131.72,118.07c4.67-4.42,17.23-15.07,36-16.91a57.76,57.76,0,0,1,22.49,2.27" />
+                <path class="cls-6" d="M151.1,101.2c10.63-14.3,24.66-18.12,31.26-13.15,4.75,3.58,5,11.24,5.08,13.4" />
+                <path class="cls-2"
+                    d="M130.14,149.14c-3.25-1.17-16.22,21.62-14.47,44.33.38,4.92,1.93,16,4.47,15.68C125.82,208.43,135,150.89,130.14,149.14Z" />
+                <path class="cls-6" d="M125.78,194.37,230.39,224Z" />
+                <circle cx="164.86" cy="192.49" r="8.39" />
+                <circle class="cls-7" cx="230" cy="232" r="221" />
+            </symbol>
+        </svg>
+        
+        <div class="container-fluid d-none d-sm-block">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-md-4 mb-0 text-body-secondary">&copy; Wenyi Zhu</p>
+                <!-- creates a link to the home page and displays logo next to it.-->
+                <a href="/"
+                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="50" height="50">
+                        <use xlink:href="#图层_1" />
+                    </svg>
+                </a>
+                <!-- defines a navigation menu  -->
+                <!-- "justify-content-end": placted at the end -->
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="sp_fap.html" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="sp_basicinfo.html" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+            </footer>
+        </div>
+
+
+        <script src="js/mychart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+        </body>
+        </html>
+<!-- 
+        Remember that scripts are loaded and executed in the order they appear in your HTML. In your case, your JavaScript file
+        (JS_main.js) that references the Chart.js library needs to come after the Chart.js library has been loaded. Also, the
+        chart relies on the <canvas id="myChart"></canvas> element, so the JavaScript that uses this element must be loaded
+        after the HTML. -->

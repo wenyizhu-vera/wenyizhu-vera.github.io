@@ -1,4 +1,4 @@
-// ===========This is week 5 xml exercise!!===========  
+// ===========This is week 5 xml exercise (use JS to parse XML)!!===========  
 //Define parent element
 var parentElement = document.getElementById('ochreTableBody');
 //Define API url
