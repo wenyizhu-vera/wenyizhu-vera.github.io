@@ -110,11 +110,13 @@ function addElements() {
     for (let i in valueArray) {
         // new div for each band
         var bandDiv = document.createElement('div');
+        bandDiv.className = 'd-flex flex-column align-items-center mb-3';
 
         // new image element and its attributes
         var newImg = document.createElement('img');
         newImg.setAttribute('src', imgArray[i]);
         newImg.setAttribute('id', 'img' + i);
+        newImg.classList.add('img-fluid');
 
         // new paragraph element for the caption
         var caption = document.createElement('p');
