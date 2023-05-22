@@ -27,8 +27,10 @@ new Chart(ctx, {
             borderWidth: 1
         }]
     },
+    
     options: {
         layout: {
+            responsive: true, // Make the chart responsive
             padding: {
                 left: 70,
                 right: 70,
