@@ -10,9 +10,10 @@ function greetUser() {
 
 function evalNumber(){
     var inputValue = prompt("Enter any five-digit number without commas");
-
+//  if not a number
     if (isNaN(inputValue)) {
         alert(inputValue + " is not a number.");
+// if length not 5
     } else if (inputValue.length !== 5) {
         alert(inputValue + " is not a five-digit number.");
     } else {
@@ -53,7 +54,7 @@ function mapLoad() {
     var mbAttr = 'Map data &copy; <a href=" ">OpenStreetMap</a > contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a >',
         mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmVsaXh3aW4iLCJhIjoiY2xnOTMwMDU4MTM1dzNncXJwNGtua29iNSJ9.273VFcJdLUfewc1gBWvhRQ';
 
-    //Define two tile layer variables
+    //Define two tile layer variables ('L' is a Leaflet build-in JS)
     var grayscale = L.tileLayer(mbUrl, {
         id: 'mapbox/light-v9',
         tileSize: 512,
@@ -71,7 +72,7 @@ function mapLoad() {
     var map = L.map('map', {
         center: latLng,
         zoom: 16,
-        layers: [streets]
+        layers: [streets] //default layer, street tile
     });
 
     //Add tile layers to base layer project
@@ -83,7 +84,7 @@ function mapLoad() {
         "Streets": streets
     };
 
-    L.control.layers(baseLayers).addTo(map);
+    L.control.layers(baseLayers).addTo(map);//addTo() is not a built-in JavaScript method
     L.marker(latLng).addTo(map)
         .bindPopup("<b>UChicago<br>Campus</b>").openPopup();
 
